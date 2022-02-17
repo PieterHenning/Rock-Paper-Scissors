@@ -8,28 +8,29 @@ scissors beats paper
 paper beats rock
 
 check valid entry
-    rock, paper or scissors
-    if the entry is not valid the palyer is propted again
+....rock, paper or scissors
+....if the entry is not valid the palyer is propted again
 check if player has rock   
-    does coputer have scissor or paper 
-        if paper
-            computer wins
-        if scissor
-            player wins
-        return output           
+....does coputer have scissor or paper 
+........if paper
+............computer wins
+........if scissor
+............player wins
+........return output           
 else does player have scissor           
-    does coputer have rock or paper 
-        if rock
-            computer wins
-        if paper
-            player wins
-        return output    
+....does coputer have rock or paper 
+........if rock
+............computer wins
+........if paper
+............player wins
+........return output    
 else does player have paper           
-    does coputer have rock or scissor 
-        if paper
-            computer wins
-        if rock
-            player wins  
-        return output   
-  (each win gets that player a point)      
+....does coputer have rock or scissor 
+........if paper
+............computer wins
+........if rock
+............player wins  
+........return output   
+(each win gets that player a point)  
+
 Check who has the higher score and they win
