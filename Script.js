@@ -97,11 +97,11 @@ function game(rounds){
     }
 
     if (player > computer){
-        console.log("You win the game!");
+        alert("You win the game!");
     } else if (computer > player){
-        console.log("You loose the game!");
+        alert("You loose the game!");
     } else if (player == computer){
-        console.log("It is a draw");
+        alert("It is a draw");
     }
 
 
