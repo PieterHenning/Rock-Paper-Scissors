@@ -85,7 +85,7 @@ function game(rounds){
     let round;
     for (let i = 0; i < rounds; i++){
         console.log('Round: ' + (i+1));
-        round = playRound(prompt("Rock, Paper or Scissors?"),computerPlay());
+        round = playRound(prompt("Scores: \nPlayer: "+ player + "      Computer: " + computer + "\nRock, Paper or Scissors?"),computerPlay());
         
         if (round == 1){
             player++;
