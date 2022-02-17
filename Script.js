@@ -102,7 +102,7 @@ function game(rounds){
         alert("You loose the game!");
     } else if (player == computer){
         alert("It is a draw");
-    }
+    } 
 
 
 }
