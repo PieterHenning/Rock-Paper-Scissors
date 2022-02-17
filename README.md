@@ -30,7 +30,7 @@ else does player have paper
 ............computer wins
 ........if rock
 ............player wins  
-........ return output   
+........return output   
 (each win gets that player a point)  
 
 Check who has the higher score and they win
