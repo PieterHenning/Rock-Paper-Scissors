@@ -1,3 +1,5 @@
+let playerScore = 0;
+let computerScore = 0;
 
 function computerPlay (){
     let selector = 0;
@@ -19,99 +21,171 @@ function computerPlay (){
     return computerAnswer;
 }
 
-function playRound (playerSelection, computerSelection){
+
+
+function scoreKeeper(player, computer){
     
-    //console.log(checkEntry(playerSelection));
+
+    if (player == -1){
+        playerScore = 0;
+        computerScore = 0;
+        return [playerScore, computerScore]
+    }
+
+    playerScore = playerScore + player;
+    computerScore = computerScore + computer; 
+
+    return [playerScore, computerScore];
+}
+
+function newGame (){
+    scoreKeeper(-1,0);
+    const scoreText = document.querySelector('#score').textContent = "Player:   0  || Computer: 0 ";
+    const message = document.querySelector('#banner').textContent = "";
+    const buttons = document.querySelector(".button_div").style.visibility = "visible";
+}
+
+function playRound (clicked_id){
+     
+    playerSelection = clicked_id;
+    computerSelection = computerPlay();
+
+    let playerScore = 0;
+    let computerScore = 0;
+    let scoreTemp = "";
+
+    let message = document.querySelector('#banner');
+    let scoreText = document.querySelector('#score');
+   
+   
+
+    //console.log("Player: " + playerSelection);
+    //console.log("Comp: " + computerSelection);
+    
 
     while (checkEntry (playerSelection) == false){
         playerSelection = prompt('Incorrect entry'), computerPlay();
     } 
         let playerSelectionUpper = playerSelection.toUpperCase();
         let computerSelectionUpper = computerSelection.toUpperCase();
-
-        //console.log("Computer: " + computerSelectionUpper);
-        //console.log("Human: "+ playerSelectionUpper);
-
+        
         if (playerSelectionUpper.localeCompare('ROCK') == 0){
             //console.log("ROCK");
 
             if (computerSelectionUpper.localeCompare('SCISSORS') == 0){
                 
-                console.log('You win! Rock beats Scissors');
-                return 1;
+                //console.log('You win! Rock beats Scissors');
+                score = scoreKeeper(1,0);
+                playerScore = score[0];
+                computerScore = score[1];
+                scoreTemp = 'Player: '+ playerScore +'  || Computer: '+ computerScore;
+                //console.log("scoreTemp: " + scoreTemp);
+                scoreText.textContent = scoreTemp ;
+                message.textContent = "You win! Rock beats Scissors";
+                
+                
             } else if (computerSelectionUpper.localeCompare('PAPER') == 0){
                 
-                console.log('You loose! Paper beats Rock');
-                return 0;
+                //console.log('You loose! Paper beats Rock');
+                score = scoreKeeper(0,1);
+                playerScore = score[0];
+                computerScore = score[1];
+                scoreTemp = 'Player: '+ playerScore +'  || Computer: '+ computerScore;
+                //console.log("scoreTemp: " + scoreTemp);
+                scoreText.textContent = scoreTemp ;
+                message.textContent = "You loose! Paper beats Rock";
+
             } else{
-                console.log('Tie');
-                return 2;
+                //console.log('Tie');
+                score = scoreKeeper(0,0);
+                playerScore = score[0];
+                computerScore = score[1];
+                scoreTemp = 'Player: '+ playerScore +'  || Computer: '+ computerScore;
+                //console.log("scoreTemp: " + scoreTemp);
+                scoreText.textContent =scoreTemp ;
+                message.textContent = "Tie";
             }
         } else if (playerSelectionUpper.localeCompare('PAPER') == 0)   {
-            //console.log("PAPER");
+            //console.log("PAgame(5);PER");
             if (computerSelectionUpper.localeCompare('ROCK') == 0){
                 
-                console.log('You win! Paper beats Rock');
-                return 1;
+                //console.log('You win! Paper beats Rock');
+                score = scoreKeeper(1,0);
+                playerScore = score[0];
+                computerScore = score[1];
+                scoreTemp = 'Player: '+ playerScore +'  || Computer: '+ computerScore;
+                //console.log("scoreTemp: " + scoreTemp);
+                scoreText.textContent =scoreTemp ;
+                message.textContent = "You win! Paper beats Rock";
+
             } else if (computerSelectionUpper.localeCompare('SCISSORS') == 0){
                 
-                console.log('You Loose! Scissors beats Paper');
-                return 0;
+                //console.log('You Loose! Scissors beats Paper');
+                score = scoreKeeper(0,1);
+                playerScore = score[0];
+                computerScore = score[1];
+                scoreTemp = 'Player: '+ playerScore +'  || Computer: '+ computerScore;
+                //console.log("scoreTemp: " + scoreTemp);
+                scoreText.textContent =scoreTemp ;
+                message.textContent = "You Loose! Scissors beats Paper";
+
             } else{
-                console.log('Tie');
-                return 2;
+                //console.log('Tie');
+                score = scoreKeeper(0,0);
+                playerScore = score[0];
+                computerScore = score[1];
+                scoreTemp = 'Player: '+ playerScore +'  || Computer: '+ computerScore;
+                //console.log("scoreTemp: " + scoreTemp);
+                scoreText.textContent =scoreTemp ;
+                message.textContent = "Tie";
+                
             }
         } else if (playerSelectionUpper.localeCompare('SCISSORS') == 0){
-            //console.log("SCISSORS");
+            //console.log("SCISSORS");clicked()
             if (computerSelectionUpper.localeCompare('PAPER') == 0){
                 
-                console.log('You win! Scissors beats Paper');
-                return 1;
+                //console.log('You win! Scissors beats Paper');
+                score = scoreKeeper(1,0);
+                playerScore = score[0];
+                computerScore = score[1];
+                scoreTemp = 'Player: '+ playerScore +'  || Computer: '+ computerScore;
+                //console.log("scoreTemp: " + scoreTemp);
+                scoreText.textContent =scoreTemp ;
+                message.textContent = "You win! Scissors beats Paper";
+
             } else if (computerSelectionUpper.localeCompare('ROCK') == 0){
-                console.log('You loose! Rock beats Scissors');
-                return 0;
+                //console.log('You loose! Rock beats Scissors');
+                score = scoreKeeper(0,1);
+                playerScore = score[0];
+                computerScore = score[1];
+
+                scoreTemp = 'Player: '+ playerScore +'  || Computer: '+ computerScore;
+                //console.log("scoreTemp: " + scoreTemp);
+                scoreText.textContent =scoreTemp ;
+                message.textContent = "You loose! Rock beats Scissors";
+                
             } else{
-                 console.log('Tie');
-                 return 2;
+                 //console.log('Tie');
+                 score = scoreKeeper(0,0);
+                playerScore = score[0];
+                computerScore = score[1];
+                scoreTemp = 'Player: '+ playerScore +'  || Computer: '+ computerScore;
+                //console.log("scoreTemp: " + scoreTemp);
+                scoreText.textContent = scoreTemp ;
+                message.textContent = "Tie";
             }
         }
+    if (playerScore == 5){
+        const message = document.querySelector('#banner').textContent = "YOU WON!!";
+        const buttons = document.querySelector(".button_div").style.visibility = "hidden"; 
         
+    } else if (computerScore == 5){
+        const message = document.querySelector('#banner').textContent = "COMPUTER WON!!";
+        const buttons = document.querySelector(".button_div").style.visibility = "hidden";
+        
+    }      
     
 }
-
-function game(rounds){
-    let player = 0;
-    let computer = 0;
-    let round;
-    for (let i = 0; i < rounds; i++){
-        console.log('Round: ' + (i+1));
-        round = playRound(prompt("Scores: \nPlayer: "+ player + "      Computer: " + computer + "\nRock, Paper or Scissors?"),computerPlay());
-        
-        if (round == 1){
-            player++;
-        } else if (round == 0){
-            computer++;
-        }
-        //console.log(player);
-        //console.log(computer);
-    }
-
-    if (player > computer){
-        alert("You win the game!");
-    } else if (computer > player){
-        alert("You loose the game!");
-    } else if (player == computer){
-        alert("It is a draw");
-<<<<<<< HEAD
-    } 
-=======
-    }
->>>>>>> b6aec0a17e1a2a5a7af26e72993801c03e2dfe7d
-
-
-}
-
-
 
 function checkEntry (playerSelection){
     
@@ -128,7 +202,7 @@ function checkEntry (playerSelection){
 
 }
 
-game(5);
+ 
 
 //let UserInput = parseInt(prompt("Please enter your selection:"));
 //game(UserInput, computerPlay());
