@@ -63,9 +63,7 @@ function playRound (clicked_id){
     //console.log("Comp: " + computerSelection);
     
 
-    while (checkEntry (playerSelection) == false){
-        playerSelection = prompt('Incorrect entry'), computerPlay();
-    } 
+    
         let playerSelectionUpper = playerSelection.toUpperCase();
         let computerSelectionUpper = computerSelection.toUpperCase();
         
@@ -187,20 +185,7 @@ function playRound (clicked_id){
     
 }
 
-function checkEntry (playerSelection){
-    
-    
-    let playerSelectionUpper = playerSelection.toUpperCase();
 
-    if (playerSelectionUpper.localeCompare('ROCK') == 0 || playerSelectionUpper.localeCompare('SCISSORS') == 0 || playerSelectionUpper.localeCompare('PAPER') == 0){
-        return true;
-
-    } else {
-        return false;
-    }
-
-
-}
 
  
 

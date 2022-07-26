@@ -1,36 +1,17 @@
 # Rock-Paper-Scissors
-The Odin Project Task to make rock paper scissors game that is run in the console against the computer
+The Odin Project Task to make rock paper scissors game that is run in the browser with a interactive UI
 
-the user is prompted to give a input of rock, paper or scissors, this input is checked to see if it is valid. The pogram also randoms a answer for the computer. the answers are compared and the winner gets a point and then after 5 rounds the player with the most points win.
+There are 3 buttons: Rock, Paper, Scissors. when clicked the game is played and the script will determine a winner of the round. first to 5 wins. When someone wins the buttons are made invisible and the new game button can be pressed to start a new game.
 
 rock beats scissors
 scissors beats paper
 paper beats rock
 
-check valid entry
-....rock, paper or scissors
-....if the entry is not valid the palyer is propted again
-check if player has rock   
-....does coputer have scissor or paper 
-........if paper
-............computer wins
-........if scissor
-............player wins
-........return output           
-else does player have scissor           
-....does coputer have rock or paper 
-........if rock
-............computer wins
-........if paper
-............player wins
-........return output    
-else does player have paper           
-....does coputer have rock or scissor 
-........if paper
-............computer wins
-........if rock
-............player wins  
-........return output   
-(each win gets that player a point)  
+Compare player input to AI generated input
+....point to the winner
+........if tie no points are awarded
+wait for player to click to play next round
+
+if 'new game' is clicked the game is reset
 
 Check who has the higher score and they win
